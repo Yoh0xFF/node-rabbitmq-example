@@ -9,7 +9,7 @@ async function send() {
         const connection = await amqp.connect('amqp://localhost');
         const channel = await connection.createChannel();
 
-        channel.assertQueue(queue, { durable: true });
+        await channel.assertQueue(queue, { durable: true });
 
         for (let k = 0; k < 10; ++k) {
             const msg = 'Hello World' + '.'.repeat(random.integer(1, 5));
@@ -27,7 +27,7 @@ async function receive(k) {
         const connection = await amqp.connect('amqp://localhost');
         const channel = await connection.createChannel();
 
-        channel.assertQueue(queue, { durable: true });
+        await channel.assertQueue(queue, { durable: true });
         channel.prefetch(1);
 
         console.log("[*] %d Waiting for messages in %s. To exit press CTRL+C", k, queue);

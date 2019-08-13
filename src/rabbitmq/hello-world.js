@@ -7,7 +7,7 @@ async function send() {
         const connection = await amqp.connect('amqp://localhost');
         const channel = await connection.createChannel();
 
-        channel.assertQueue(queue, { durable: false });
+        await channel.assertQueue(queue, { durable: false });
 
         const msg = 'Hello World!!!';
         channel.sendToQueue(queue, Buffer.from(msg));
@@ -23,7 +23,7 @@ async function receive() {
         const connection = await amqp.connect('amqp://localhost');
         const channel = await connection.createChannel();
 
-        channel.assertQueue(queue, { durable: false });
+        await channel.assertQueue(queue, { durable: false });
 
         console.log("[*] Waiting for messages in %s. To exit press CTRL+C", queue);
         channel.consume(queue, (msg) => {
