@@ -46,8 +46,8 @@ async function receive(k, route) {
 }
 
 export default async function run() {
-    setInterval(send, 10000);
-    receive(1, 'green');
-    receive(2, 'red');
-    receive(3, 'red');
+    setInterval(send, 5000);
+    await receive(1, 'green');
+    await receive(2, 'red');
+    await receive(3, 'red');
 }
