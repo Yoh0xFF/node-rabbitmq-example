@@ -13,8 +13,8 @@ async function send() {
 
         for (let k = 0; k < 10; ++k) {
             const msg = random.string(10);
-            const route = (random.integer(1, 100) % 2 == 0 ? 'app': 'sys')
-                + (random.integer(1, 100) % 2 == 0 ? '.green': '.red');
+            const route = (random.integer(1, 100) % 2 == 0 ? 'app' : 'sys')
+                + (random.integer(1, 100) % 2 == 0 ? '.green' : '.red');
             channel.publish(exchange, route, Buffer.from(msg));
             console.log("[x] Sent %s %s", route, msg);
         }
