@@ -1,2 +1,3 @@
-# node-rabbitmq-example
-Node RabbitMQ Example
+# Node RabbitMQ Example
+
+Sample project demonstrating RabbitMQ usage with Node.js
