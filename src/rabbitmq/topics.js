@@ -46,7 +46,7 @@ async function receive(k, route) {
     }
 }
 
-export default async function run() {
+export async function run() {
     setInterval(send, 5000);
     await receive(1, 'sys.*');
     await receive(2, 'app.*');

@@ -37,6 +37,6 @@ async function receive() {
     }
 }
 
-export default async function run() {
+export async function run() {
     receive().then(() => setInterval(send, 1000));
 }

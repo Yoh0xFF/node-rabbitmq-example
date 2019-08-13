@@ -44,7 +44,7 @@ async function receive(k) {
     }
 }
 
-export default async function run() {
+export async function run() {
     setInterval(send, 5000);
     await receive(1);
     await receive(2);

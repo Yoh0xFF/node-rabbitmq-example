@@ -1,22 +1,24 @@
 {
     "name": "rabbitmq-example",
     "version": "1.0.0",
-    "description": "",
-    "main": "src/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "serve": "babel-node src/index.js"
-    },
-    "author": "",
+    "author": "Ioram Gordadze",
     "license": "ISC",
-    "devDependencies": {
-        "@babel/cli": "^7.5.5",
-        "@babel/core": "^7.5.5",
-        "@babel/node": "^7.5.5",
-        "@babel/preset-env": "^7.5.5"
+    "description": "Sample project demonstrating RabbitMQ usage with Node.js",
+    "main": "src/index.js",
+
+    "scripts": {
+        "serve": "MOD=hello-world babel-node src/index.js"
     },
+
     "dependencies": {
-        "amqplib": "^0.5.5",
-        "random-js": "^2.1.0"
+        "amqplib": "0.5.5",
+        "random-js": "2.1.0"
+    },
+
+    "devDependencies": {
+        "@babel/cli": "7.5.5",
+        "@babel/core": "7.5.5",
+        "@babel/node": "7.5.5",
+        "@babel/preset-env": "7.5.5"
     }
 }
